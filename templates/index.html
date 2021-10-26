@@ -1,0 +1,38 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <h1>THE LIBRARY</h1>
+
+    {% if not logged_in %}
+    <a href="/login">Log in</a>
+    {% else %}
+    <a href="/logout">Log out</a>
+    {% endif %}
+
+    <h2>LIST OF BOOKS</h2>
+    <ol>
+        {% for book in books %}
+        <li>
+            <p>{{ book[1] }} by {{ book[0] }}</p>
+        </li>
+        {% endfor %}
+    </ol>
+
+    {% if logged_in %}
+    <div>
+        <a href="/add_book">Add a new book</a>
+    </div>
+    {% endif %}
+
+    {% if admin %}
+    <div>
+        <a href="/users">Manage users</a>
+    </div>
+    {% endif %}
+
+</body>
+
+</html>

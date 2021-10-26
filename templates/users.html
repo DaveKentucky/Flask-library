@@ -1,0 +1,27 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <h1>THE LIBRARY</h1>
+    <h2>ADMIN PANEL</h2>
+
+    <a href="/">Back to main page</a>
+
+    <h2>LIST OF USERS</h2>
+    <ol>
+        {% for user in users %}
+        <li>
+            <a href="/user/{{ user[0] }}">
+                <p>{{ user[0] }}</p>
+            </a>
+        </li>
+        {% endfor %}
+    </ol>
+
+    <a href="/add_user">Add new user</a>
+
+</body>
+
+</html>
